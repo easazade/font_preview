@@ -7,32 +7,37 @@ class FontPreviewList extends StatelessWidget {
   FontPreviewList({
     super.key,
     required this.text,
-    required List<FontDetails> fonts,
+    required List<FontProvider> fonts,
     required List<double> previewSizes,
     required List<FontWeight> fontWeights,
     required List<FontStyle> fontStyles,
   }) {
-    for (var font in fonts) {
-      for (var size in previewSizes) {
-        for (var weight in fontWeights) {
-          for (var style in fontStyles) {
-            _textStyles.add(font.styleBuilder(size, weight, style).copyWith(fontFamilyFallback: [kFallbackFont]));
+    for (var size in previewSizes) {
+      for (var weight in fontWeights) {
+        for (var style in fontStyles) {
+          List<TextStyle> styles = [];
+          for (var font in fonts) {
+            styles.add(font.styleBuilder(size, weight, style).copyWith(fontFamilyFallback: [kFallbackFont]));
           }
+          _textStyles.add(styles);
         }
       }
     }
   }
 
   final String text;
-  final List<TextStyle> _textStyles = [];
+  final List<List<TextStyle>> _textStyles = [];
 
   @override
   Widget build(BuildContext context) {
     print(_textStyles.length);
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
-        final textStyle = _textStyles[index];
-        return FontPreviewSingleItem(text, textStyle);
+        final styles = _textStyles[index];
+        if (styles.length == 1)
+          return FontPreviewItem(text, styles.first);
+        else
+          return FontPreviewMultiItem(text, styles);
       },
       itemCount: _textStyles.length,
     );

@@ -6,8 +6,8 @@ import 'package:font_preview/src/widget/preview_list.dart';
 class FontPreview {
   static void previewFonts(
     BuildContext context, {
-    required String text,
-    required List<FontDetails> fonts,
+    required String previewText,
+    required List<FontProvider> fonts,
     List<double> previewSizes = kPreviewFontSizes,
     List<FontWeight> fontWeights = FontWeight.values,
     List<FontStyle> fontStyles = FontStyle.values,
@@ -17,7 +17,7 @@ class FontPreview {
       MaterialPageRoute(
         builder: (context) => Material(
           child: FontPreviewList(
-            text: text,
+            text: previewText,
             fonts: fonts,
             previewSizes: previewSizes,
             fontWeights: fontWeights,

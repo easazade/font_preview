@@ -19,11 +19,37 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 FontPreview.previewFonts(
                   context,
-                  text: 'Flutter is Great',
+                  previewText: 'Flutter is Great',
                   fonts: [
-                    FontDetails.fromFontFamily('Poppins'),
-                    FontDetails.fromBuilder(
+                    FontProvider.fromBuilder(
                       (fontSize, fontWeight, fontStyle) => GoogleFonts.raleway(
+                        fontSize: fontSize,
+                        fontStyle: fontStyle,
+                        fontWeight: fontWeight,
+                      ),
+                    ),
+                    FontProvider.fromBuilder(
+                      (fontSize, fontWeight, fontStyle) => GoogleFonts.roboto(
+                        fontSize: fontSize,
+                        fontStyle: fontStyle,
+                        fontWeight: fontWeight,
+                      ),
+                    ),
+                    FontProvider.fromFontFamily('Unknown Font'),
+                  ],
+                  fontStyles: [FontStyle.normal],
+                );
+              },
+              child: Text('Comapre Fonts'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                FontPreview.previewFonts(
+                  context,
+                  previewText: 'Flutter is Great',
+                  fonts: [
+                    FontProvider.fromBuilder(
+                      (fontSize, fontWeight, fontStyle) => GoogleFonts.poppins(
                         fontSize: fontSize,
                         fontStyle: fontStyle,
                         fontWeight: fontWeight,
@@ -33,7 +59,26 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Preview Single Font'),
+              child: Text('Preview Single font'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                FontPreview.previewFonts(
+                  context,
+                  previewText: 'Google Font without all font style files - (acme)',
+                  fonts: [
+                    FontProvider.fromBuilder(
+                      (fontSize, fontWeight, fontStyle) => GoogleFonts.acme(
+                        fontSize: fontSize,
+                        fontStyle: fontStyle,
+                        fontWeight: fontWeight,
+                      ),
+                    ),
+                  ],
+                  fontStyles: [FontStyle.normal],
+                );
+              },
+              child: Text('Preview Single font'),
             ),
           ],
         ),

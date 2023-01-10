@@ -19,5 +19,5 @@ flutter:
   fonts:
     - family: fallback_font
       fonts: 
-        - asset: lib/src/assets/fallback_font/RubikStorm-Regular.ttf
+        - asset: lib/src/assets/fallback_font/BungeeShade-Regular.ttf
 
