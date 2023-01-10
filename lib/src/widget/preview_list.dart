@@ -37,7 +37,7 @@ class FontPreviewList extends StatelessWidget {
         if (styles.length == 1)
           return FontPreviewItem(text, styles.first);
         else
-          return FontPreviewMultiItem(text, styles);
+          return CompareFontsItem(text, styles);
       },
       itemCount: _textStyles.length,
     );

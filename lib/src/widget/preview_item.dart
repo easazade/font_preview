@@ -24,8 +24,8 @@ class FontPreviewItem extends StatelessWidget {
   }
 }
 
-class FontPreviewMultiItem extends StatelessWidget {
-  FontPreviewMultiItem(
+class CompareFontsItem extends StatelessWidget {
+  CompareFontsItem(
     this.text,
     this.textStyles, {
     super.key,
