@@ -18,8 +18,10 @@ class FontPreviewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(border: Border.all(color: Colors.grey[200]!, width: 1)),
-      child: FontViewAndInfo(text: text, styleInfo: _styleInfo, textStyle: textStyle),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.grey[200]!, width: 1)),
+      child: FontViewAndInfo(
+          text: text, styleInfo: _styleInfo, textStyle: textStyle),
     );
   }
 }
@@ -55,7 +57,10 @@ class CompareFontsItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             for (var i = 0; i < textStyles.length; i++)
-              FontViewAndInfo(text: text, styleInfo: _styleInfos[i], textStyle: textStyles[i]),
+              FontViewAndInfo(
+                  text: text,
+                  styleInfo: _styleInfos[i],
+                  textStyle: textStyles[i]),
           ],
         ),
       ),

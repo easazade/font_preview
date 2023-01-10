@@ -17,7 +17,9 @@ class FontPreviewList extends StatelessWidget {
         for (var style in fontStyles) {
           List<TextStyle> styles = [];
           for (var font in fonts) {
-            styles.add(font.styleBuilder(size, weight, style).copyWith(fontFamilyFallback: [kFallbackFont]));
+            styles.add(font
+                .styleBuilder(size, weight, style)
+                .copyWith(fontFamilyFallback: [kFallbackFont]));
           }
           _textStyles.add(styles);
         }
