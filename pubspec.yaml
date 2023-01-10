@@ -14,5 +14,10 @@ dependencies:
 dev_dependencies:
   flutter_lints: ^2.0.0
 
-# flutter:
+flutter:
+
+  fonts:
+    - family: fallback_font
+      fonts: 
+        - asset: lib/src/assets/fallback_font/RubikStorm-Regular.ttf
 

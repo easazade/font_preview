@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_preview/font_preview.dart';
+import 'package:google_fonts/google_fonts.dart'; // Raleway fonts are included
 
 class HomePage extends StatelessWidget {
   const HomePage();
@@ -15,7 +17,21 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                
+                FontPreview.previewFonts(
+                  context,
+                  text: 'Flutter is Great',
+                  fonts: [
+                    FontDetails.fromFontFamily('Poppins'),
+                    FontDetails.fromBuilder(
+                      (fontSize, fontWeight, fontStyle) => GoogleFonts.raleway(
+                        fontSize: fontSize,
+                        fontStyle: fontStyle,
+                        fontWeight: fontWeight,
+                      ),
+                    ),
+                  ],
+                  fontStyles: [FontStyle.normal],
+                );
               },
               child: Text('Preview Single Font'),
             ),

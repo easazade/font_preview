@@ -1,14 +1,30 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:font_preview/src/constants.dart';
 import 'package:font_preview/src/font_details.dart';
+import 'package:font_preview/src/widget/preview_list.dart';
 
 class FontPreview {
-  static void previewFonts({
+  static void previewFonts(
+    BuildContext context, {
+    required String text,
     required List<FontDetails> fonts,
     List<double> previewSizes = kPreviewFontSizes,
-    List<FontWeight> fontWeights = const [],
-    List<FontStyle> fontStyles = const [],
+    List<FontWeight> fontWeights = FontWeight.values,
+    List<FontStyle> fontStyles = FontStyle.values,
   }) {
-    // create the best here
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Material(
+          child: FontPreviewList(
+            text: text,
+            fonts: fonts,
+            previewSizes: previewSizes,
+            fontWeights: fontWeights,
+            fontStyles: fontStyles,
+          ),
+        ),
+      ),
+    );
   }
 }
