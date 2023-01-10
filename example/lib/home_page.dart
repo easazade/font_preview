@@ -59,7 +59,20 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Preview Single font'),
+              child: Text('Preview Single google font (poppins)'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                FontPreview.previewFonts(
+                  context,
+                  previewText: 'Flutter is Great',
+                  fonts: [
+                    FontProvider.fromFontFamily('Ubuntu'),
+                  ],
+                  fontStyles: [FontStyle.normal],
+                );
+              },
+              child: Text('Preview Single custom font (ubuntu)'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -79,7 +92,7 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Preview Single font'),
+              child: Text('Font without font files for different styles'),
             ),
           ],
         ),
