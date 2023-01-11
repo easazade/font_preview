@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+String _createTextStyleInfo(TextStyle textStyle) =>
+    '${textStyle.fontFamily} - ${textStyle.fontSize} - ${textStyle.fontStyle?.name} - ${textStyle.fontWeight.toString().split('.').last}';
+
 class FontPreviewItem extends StatelessWidget {
   FontPreviewItem(
     this.text,
     this.textStyle, {
     super.key,
-  }) : _styleInfo =
-            '${textStyle.fontFamily} - ${textStyle.fontStyle?.name} - ${textStyle.fontWeight.toString().split('.').last}';
+  }) : _styleInfo = _createTextStyleInfo(textStyle);
 
   final String text;
 
@@ -32,8 +34,7 @@ class CompareFontsItem extends StatelessWidget {
     this.textStyles, {
     super.key,
   }) : _styleInfos = textStyles
-            .map((textStyle) =>
-                '${textStyle.fontFamily} - ${textStyle.fontStyle?.name} - ${textStyle.fontWeight.toString().split('.').last}')
+            .map((textStyle) => _createTextStyleInfo(textStyle))
             .toList();
 
   final String text;

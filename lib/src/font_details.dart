@@ -1,7 +1,10 @@
 import 'package:flutter/widgets.dart';
 
 typedef TextStyleBuilder = TextStyle Function(
-    double fontSize, FontWeight fontWeight, FontStyle fontStyle);
+  double fontSize,
+  FontWeight fontWeight,
+  FontStyle fontStyle,
+);
 
 class FontProvider {
   FontProvider._({required this.styleBuilder});

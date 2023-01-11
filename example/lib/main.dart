@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       title: 'Font Preview',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        textTheme: GoogleFonts.ralewayTextTheme(),
+        // textTheme: GoogleFonts.ralewayTextTheme(),
       ),
       home: HomePage(),
     );
@@ -98,7 +98,8 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 FontPreview.previewFonts(
                   context,
-                  previewText: 'Google Font without all font style files - (acme)',
+                  previewText:
+                      'Google Font without all font style files - (acme)',
                   fonts: [
                     FontProvider.fromBuilder(
                       (fontSize, fontWeight, fontStyle) => GoogleFonts.acme(
