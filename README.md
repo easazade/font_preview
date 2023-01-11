@@ -1,7 +1,7 @@
 ### What is it?
 font_preview is helper a package to inspect, compare & preview fonts that are being used in Flutter apps
 
-<img src="flutter_01.png" width="200"> <img src="flutter_02.png" width="200"> <img src="flutter_03.png" width="200">
+<img src="https://user-images.githubusercontent.com/38987302/211730377-a6820e24-f995-4528-a30b-a93925323f20.png" width="200"> <img src="https://user-images.githubusercontent.com/38987302/211730436-957e0686-6da3-4144-8549-462071a2b233.png" width="200"> <img src="https://user-images.githubusercontent.com/38987302/211730519-a8028096-da2c-467e-9574-b34d6b263fa1.png" width="200">
 
 ### When do you need it?
 
