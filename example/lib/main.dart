@@ -88,6 +88,8 @@ class HomePage extends StatelessWidget {
                     FontProvider.fromFontFamily('Ubuntu'),
                   ],
                   fontStyles: [FontStyle.normal],
+                  fontWeights: [FontWeight.w400, FontWeight.w700],
+                  previewSizes: [11.0, 12.0, 14.0, 16.0, 18.0, 22.0],
                 );
               },
               child: Text('Preview Single custom font (ubuntu)'),
@@ -96,8 +98,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 FontPreview.previewFonts(
                   context,
-                  previewText:
-                      'Google Font without all font style files - (acme)',
+                  previewText: 'Google Font without all font style files - (acme)',
                   fonts: [
                     FontProvider.fromBuilder(
                       (fontSize, fontWeight, fontStyle) => GoogleFonts.acme(
