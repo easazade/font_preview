@@ -1,3 +1,6 @@
+## 0.1.3
+
+* Decrease minimum version of dart sdk required.
 ## 0.1.2
 
 * Add documention.
