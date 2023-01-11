@@ -5,16 +5,16 @@ font_preview is helper a package to inspect, compare & preview fonts that are be
 
 ### When do you need it?
 
-- When you want to make sure you're custom font is loaded and being used
-- When you want to make sure the google font you're using is downloaded and being used
+- When you want to make sure youre custom font is loaded and being used
+- When you're using [google_font](https://pub.dev/packages/google_fonts) and you want to make sure the font you're using is downloaded and being used
 
-NOTE: when you're font is not loaded `font_preview` uses `BungeeShade-Regular` as the fallback font so if your font is not loaded on your texts, they will look like this. 
+NOTE: `font_preview` uses `BungeeShade-Regular` as the fallback font so if your font is not loaded on your texts, they will look like this. 
 <img src="https://user-images.githubusercontent.com/38987302/211726606-43de100f-4117-4fed-adc6-adb3b19bf7d0.png" width="200">
 this way you can easily recognize this issue.
 
 - when you simply need to see how the font looks like across different font-weights and font-styles 
 - when you want to compare fonts together
-- when you need to make sure all font-weights and font-styles for your custom fonts are loaded correctly. 
+- when you need to make sure all font-weights and font-styles for your custom font are loaded correctly. 
 - when you want to check for faux styles. for example whether flutter is using a faux bold for w700 font weight or the font you specified.
 
 
