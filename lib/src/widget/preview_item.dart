@@ -6,9 +6,8 @@ String _createTextStyleInfo(TextStyle textStyle) =>
 class FontPreviewItem extends StatelessWidget {
   FontPreviewItem(
     this.text,
-    this.textStyle, {
-    super.key,
-  }) : _styleInfo = _createTextStyleInfo(textStyle);
+    this.textStyle,
+  ) : _styleInfo = _createTextStyleInfo(textStyle);
 
   final String text;
 
@@ -31,9 +30,8 @@ class FontPreviewItem extends StatelessWidget {
 class CompareFontsItem extends StatelessWidget {
   CompareFontsItem(
     this.text,
-    this.textStyles, {
-    super.key,
-  }) : _styleInfos = textStyles
+    this.textStyles,
+  ) : _styleInfos = textStyles
             .map((textStyle) => _createTextStyleInfo(textStyle))
             .toList();
 
@@ -71,7 +69,6 @@ class CompareFontsItem extends StatelessWidget {
 
 class FontViewAndInfo extends StatelessWidget {
   const FontViewAndInfo({
-    super.key,
     required this.text,
     required this.styleInfo,
     required this.textStyle,

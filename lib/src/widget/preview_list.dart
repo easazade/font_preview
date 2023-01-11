@@ -5,7 +5,6 @@ import 'package:font_preview/src/widget/preview_item.dart';
 
 class FontPreviewList extends StatelessWidget {
   FontPreviewList({
-    super.key,
     required this.text,
     required List<FontProvider> fonts,
     required List<double> previewSizes,
