@@ -31,7 +31,6 @@ class FontPreviewList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(_textStyles.length);
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         final styles = _textStyles[index];

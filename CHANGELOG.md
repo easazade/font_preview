@@ -1,3 +1,6 @@
+## 0.1.4
+
+* Remove print.
 ## 0.1.3
 
 * Decrease minimum version of dart sdk required.
