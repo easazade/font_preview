@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:font_preview/font_preview.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(const App());
 
@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: const Text('Font without font files for different styles'),
+              child: const Text('Google Fonts acme'),
             ),
           ],
         ),
