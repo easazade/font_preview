@@ -1,3 +1,7 @@
+## 0.2.1
+
+* Update README
+
 ## 0.2.0
 
 * Require Dart 3.8+ and Flutter 3.32+; retain the existing public API.

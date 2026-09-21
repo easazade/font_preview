@@ -1,6 +1,6 @@
 name: font_preview
 description: A package to inspect, compare and preview fonts that are being used in Flutter apps
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/easazade/font_preview
 repository: https://github.com/easazade/font_preview
 
