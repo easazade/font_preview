@@ -1,30 +1,28 @@
 name: example
-description: A new Flutter project.
+description: Example app demonstrating the font_preview Flutter package.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: none
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: ^3.10.0
+  flutter: '>=3.38.0'
 
 dependencies:
   flutter:
     sdk: flutter
-
-
-  cupertino_icons: ^1.0.2
+  font_preview:
+    path: ../
+  google_fonts: ^8.2.1
+  cupertino_icons: ^1.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  google_fonts: ^3.0.1  
-  flutter_lints: ^2.0.0
-  font_preview:
-    path: ../
+  flutter_lints: ^6.0.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -49,9 +47,7 @@ flutter:
           weight: 500
           style: italic
         - asset: assets/fonts/Ubuntu-Bold.ttf
-          weight: 600
+          weight: 700
         - asset: assets/fonts/Ubuntu-BoldItalic.ttf
-          weight: 600
+          weight: 700
           style: italic
-
-  

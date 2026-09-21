@@ -5,6 +5,7 @@ import 'package:font_preview/src/widget/preview_item.dart';
 
 class FontPreviewList extends StatelessWidget {
   FontPreviewList({
+    super.key,
     required this.text,
     required List<FontProvider> fonts,
     required List<double> previewSizes,
@@ -16,9 +17,11 @@ class FontPreviewList extends StatelessWidget {
         for (var style in fontStyles) {
           List<TextStyle> styles = [];
           for (var font in fonts) {
-            styles.add(font
-                .styleBuilder(size, weight, style)
-                .copyWith(fontFamilyFallback: [kFallbackFont]));
+            styles.add(
+              font
+                  .styleBuilder(size, weight, style)
+                  .copyWith(fontFamilyFallback: [kFallbackFont]),
+            );
           }
           _textStyles.add(styles);
         }
@@ -34,10 +37,10 @@ class FontPreviewList extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         final styles = _textStyles[index];
-        if (styles.length == 1)
+        if (styles.length == 1) {
           return FontPreviewItem(text, styles.first);
-        else
-          return CompareFontsItem(text, styles);
+        }
+        return CompareFontsItem(text, styles);
       },
       itemCount: _textStyles.length,
     );

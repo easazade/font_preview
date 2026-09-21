@@ -1,12 +1,18 @@
 ### What is it?
-font_preview is a helper package to inspect, compare & preview fonts that are being used in you Flutter app.
+font_preview is a Flutter **package** to inspect, compare & preview fonts used in your Flutter app.
+
+### Requirements
+
+- Package: Dart 3.8+ and Flutter 3.32+.
+- The separate app in `example/` requires Dart 3.10+ and Flutter 3.38+ because it uses `google_fonts` 8.
+- `google_fonts` is optional for consumers; this package depends only on the Flutter SDK.
 
 <img src="https://user-images.githubusercontent.com/38987302/211730377-a6820e24-f995-4528-a30b-a93925323f20.png" width="200"> <img src="https://user-images.githubusercontent.com/38987302/211730436-957e0686-6da3-4144-8549-462071a2b233.png" width="200"> <img src="https://user-images.githubusercontent.com/38987302/211730519-a8028096-da2c-467e-9574-b34d6b263fa1.png" width="200">
 
 ### When do you need it?
 
-- When you want to make sure youre custom font is loaded and being used
-- When you're using [google_font](https://pub.dev/packages/google_fonts) and you want to make sure the font you're using is downloaded and being used
+- When you want to make sure your custom font is loaded and being used
+- When you're using [google_fonts](https://pub.dev/packages/google_fonts) and you want to make sure the font you're using is downloaded and being used
 
 NOTE: `font_preview` uses `BungeeShade-Regular` as the fallback font so if your font is not loaded on your texts, they will look like this. 
 <img src="https://user-images.githubusercontent.com/38987302/211726606-43de100f-4117-4fed-adc6-adb3b19bf7d0.png" width="200">
@@ -22,14 +28,17 @@ this way you can easily recognize this issue.
 
 ### How to use it?
 
-Add it as a `dev_dependency`
+Add the package to your app:
 
-```yaml
-dev_dependencies:
-  font_preview: $latest-version
+```sh
+flutter pub add font_preview
 ```
 
-Run the following code. it will navigates to a new screen to preview the fonts
+Use a regular `dependency` when importing it from `lib/`. If it is only used in
+separate development tooling or tests, use `flutter pub add --dev font_preview`.
+
+Import `package:font_preview/font_preview.dart`, then use a context beneath a
+`MaterialApp` to navigate to a font preview screen:
 
 ```dart
 FontPreview.previewFonts(

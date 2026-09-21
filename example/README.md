@@ -1,16 +1,26 @@
-# example
+# font_preview example
 
-A new Flutter project.
+This is the demo app for the Flutter package in the parent directory. It is not
+published to pub.dev. Requires Dart 3.10+ / Flutter 3.38+ for `google_fonts` 8.
 
-## Getting Started
+From this directory:
 
-This project is a starting point for a Flutter application.
+```sh
+flutter pub get
+flutter run -d chrome
+```
 
-A few resources to get you started if this is your first Flutter project:
+Ubuntu and Raleway fonts are bundled. Other Google Fonts are downloaded at
+runtime and require internet access.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Checks
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter analyze
+flutter test
+flutter build web
+```
+
+For Android, install JDK 17+ and the Android SDK required by your Flutter version
+(SDK 36 for Flutter 3.41). The example uses the declarative Flutter Gradle plugins.
+Apple deployment targets are iOS 13 and macOS 10.15.

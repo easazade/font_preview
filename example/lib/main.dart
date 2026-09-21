@@ -11,24 +11,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Font Preview',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        // textTheme: GoogleFonts.ralewayTextTheme(),
-      ),
-      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      home: const HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage();
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Font Preview Example'),
-      ),
+      appBar: AppBar(title: const Text('Font Preview Example')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +53,7 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Comapre Fonts'),
+              child: const Text('Compare Fonts'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -77,22 +72,20 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Preview Single google font (poppins)'),
+              child: const Text('Preview Single google font (poppins)'),
             ),
             ElevatedButton(
               onPressed: () {
                 FontPreview.previewFonts(
                   context,
                   previewText: 'Flutter is Great',
-                  fonts: [
-                    FontProvider.fromFontFamily('Ubuntu'),
-                  ],
+                  fonts: [FontProvider.fromFontFamily('Ubuntu')],
                   fontStyles: [FontStyle.normal],
                   fontWeights: [FontWeight.w400, FontWeight.w700],
                   previewSizes: [11.0, 12.0, 14.0, 16.0, 18.0, 22.0],
                 );
               },
-              child: Text('Preview Single custom font (ubuntu)'),
+              child: const Text('Preview Single custom font (ubuntu)'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -112,7 +105,7 @@ class HomePage extends StatelessWidget {
                   fontStyles: [FontStyle.normal],
                 );
               },
-              child: Text('Font without font files for different styles'),
+              child: const Text('Font without font files for different styles'),
             ),
           ],
         ),

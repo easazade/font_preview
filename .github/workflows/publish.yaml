@@ -4,30 +4,26 @@ on:
   release:
     types: [published]
 
-  # pull_request:
-    # branches:
-      # - master
-
-  # push:
-  #   branches:
-  #     - master
+permissions:
+  contents: read
 
 jobs:
-  build:
+  validate:
+    uses: ./.github/workflows/ci.yaml
+
+  publish:
+    needs: validate
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.3.10'
-          channel: 'stable'
+          channel: stable
       - name: Install dependencies
         run: flutter pub get
       - name: Analyze
         run: flutter analyze
-      # - name: Run tests
-      #   run: flutter test
       - name: Setup Pub Credentials
         shell: bash
         env:

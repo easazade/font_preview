@@ -1,5 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.example">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+   <!-- Google Fonts can download fonts that are not bundled as assets. -->
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="example"
         android:name="${applicationName}"

@@ -4,10 +4,8 @@ String _createTextStyleInfo(TextStyle textStyle) =>
     '${textStyle.fontFamily} - ${textStyle.fontSize} - ${textStyle.fontStyle?.name} - ${textStyle.fontWeight.toString().split('.').last}';
 
 class FontPreviewItem extends StatelessWidget {
-  FontPreviewItem(
-    this.text,
-    this.textStyle,
-  ) : _styleInfo = _createTextStyleInfo(textStyle);
+  FontPreviewItem(this.text, this.textStyle, {super.key})
+    : _styleInfo = _createTextStyleInfo(textStyle);
 
   final String text;
 
@@ -19,21 +17,23 @@ class FontPreviewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration:
-          BoxDecoration(border: Border.all(color: Colors.grey[200]!, width: 1)),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey[200]!, width: 1),
+      ),
       child: FontViewAndInfo(
-          text: text, styleInfo: _styleInfo, textStyle: textStyle),
+        text: text,
+        styleInfo: _styleInfo,
+        textStyle: textStyle,
+      ),
     );
   }
 }
 
 class CompareFontsItem extends StatelessWidget {
-  CompareFontsItem(
-    this.text,
-    this.textStyles,
-  ) : _styleInfos = textStyles
-            .map((textStyle) => _createTextStyleInfo(textStyle))
-            .toList();
+  CompareFontsItem(this.text, this.textStyles, {super.key})
+    : _styleInfos = textStyles
+          .map((textStyle) => _createTextStyleInfo(textStyle))
+          .toList();
 
   final String text;
 
@@ -57,9 +57,10 @@ class CompareFontsItem extends StatelessWidget {
           children: [
             for (var i = 0; i < textStyles.length; i++)
               FontViewAndInfo(
-                  text: text,
-                  styleInfo: _styleInfos[i],
-                  textStyle: textStyles[i]),
+                text: text,
+                styleInfo: _styleInfos[i],
+                textStyle: textStyles[i],
+              ),
           ],
         ),
       ),
@@ -69,6 +70,7 @@ class CompareFontsItem extends StatelessWidget {
 
 class FontViewAndInfo extends StatelessWidget {
   const FontViewAndInfo({
+    super.key,
     required this.text,
     required this.styleInfo,
     required this.textStyle,
@@ -84,12 +86,12 @@ class FontViewAndInfo extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text(text, style: textStyle),
-        SizedBox(width: 3),
+        const SizedBox(width: 3),
         Text(
           styleInfo,
           style: TextStyle(
             fontSize: 10,
-            color: Theme.of(context).primaryColor.withOpacity(.40),
+            color: Theme.of(context).primaryColor.withValues(alpha: .40),
           ),
         ),
       ],

@@ -1,5 +1,3 @@
-library font_preview;
-
 export 'src/widget/preview_list.dart';
 export 'src/widget/preview_item.dart';
 
