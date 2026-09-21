@@ -16,9 +16,9 @@ jobs:
       matrix:
         include:
           - name: minimum
-            flutter-version: '3.32.0'
+            flutter-version: "3.32.0"
           - name: stable
-            flutter-version: ''
+            flutter-version: ""
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -30,6 +30,7 @@ jobs:
       - run: flutter pub get --no-example
       - run: flutter analyze --no-pub lib test
       - run: flutter test --no-pub
+      - run: flutter pub publish --dry-run --ignore-warnings
 
   example:
     runs-on: ubuntu-latest
@@ -46,4 +47,3 @@ jobs:
         working-directory: example
       - run: flutter build web
         working-directory: example
-      - run: flutter pub publish --dry-run
