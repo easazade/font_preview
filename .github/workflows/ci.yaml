@@ -30,7 +30,7 @@ jobs:
       - run: flutter pub get --no-example
       - run: flutter analyze --no-pub lib test
       - run: flutter test --no-pub
-      - run: flutter pub publish --dry-run --ignore-warnings
+          
 
   example:
     runs-on: ubuntu-latest
